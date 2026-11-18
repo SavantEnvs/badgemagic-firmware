@@ -1,0 +1,9 @@
+project: savantenvs/badgemagic-firmware
+target: fuzz_legacy_ble
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_legacy_ble/testsuite
+cmds:
+  - cmd: /mayhem/mayhem/build/fuzz_legacy_ble
+    libfuzzer: true
+    timeout: 10

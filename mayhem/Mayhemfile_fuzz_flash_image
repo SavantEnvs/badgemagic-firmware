@@ -1,0 +1,9 @@
+project: savantenvs/badgemagic-firmware
+target: fuzz_flash_image
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_flash_image/testsuite
+cmds:
+  - cmd: /mayhem/mayhem/build/fuzz_flash_image
+    libfuzzer: true
+    timeout: 10

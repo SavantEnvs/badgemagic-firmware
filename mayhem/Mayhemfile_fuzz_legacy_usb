@@ -1,0 +1,8 @@
+project: savantenvs/badgemagic-firmware
+target: fuzz_legacy_usb
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_legacy_usb/testsuite
+cmds:
+  - cmd: /mayhem/mayhem/build/fuzz_legacy_usb @@
+    timeout: 10

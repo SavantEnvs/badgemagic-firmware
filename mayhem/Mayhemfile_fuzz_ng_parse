@@ -1,0 +1,9 @@
+project: savantenvs/badgemagic-firmware
+target: fuzz_ng_parse
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_ng_parse/testsuite
+cmds:
+  - cmd: /mayhem/mayhem/build/fuzz_ng_parse
+    libfuzzer: true
+    timeout: 10

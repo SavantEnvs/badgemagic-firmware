@@ -1,0 +1,9 @@
+project: savantenvs/badgemagic-firmware
+target: fuzz_ota_iap
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_ota_iap/testsuite
+cmds:
+  - cmd: /mayhem/mayhem/build/fuzz_ota_iap
+    libfuzzer: true
+    timeout: 10
